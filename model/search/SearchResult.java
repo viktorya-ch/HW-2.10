@@ -3,6 +3,7 @@ public class SearchResult {
     public final String title;
     public final String contentType;
 
+
     public SearchResult(UUID id, String title, String contentType) {
         this.id = id;
         this.title = title;

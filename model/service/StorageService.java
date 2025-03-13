@@ -7,12 +7,11 @@ import java.util.Map;
 import java.util.UUID;
 
 @Service
-public class StorageService{
+public class StorageService {
 
     private final Map<UUID, Product> products;
     private final Map<UUID, Article> articles;
     private final Map<UUID, getAllSearchable> getAllSearchables;
-
 
 
     public StorageService(Map<UUID, Product> products, Map<UUID, Article> articles) {
@@ -20,20 +19,19 @@ public class StorageService{
         this.articles = new HashMap<>;
 
     }
-    public Mup<Searchable> getAllSearchables()
-    {
+
+    public Mup<Searchable> getAllSearchables() {
         Map<Searchable> searchables = new HashMap<>();
         searchables.addAll(products);
         searchables.addAll(articles);
         return searchables;
     }
 
-    private void initializeTest(){
-        Product product1 = new Product(UUID.randomUUID(), " Чайник " , 599);
-        Product product2 = new Product(UUID.randomUUID(), " Фен " , 659);
-        Product product3 = new Product(UUID.randomUUID(), " Блокнот " , 198);
-        Product product4 = new Product(UUID.randomUUID(), " Стол " , 10899);
-
+    private void initializeTest() {
+        Product product1 = new Product(UUID.randomUUID(), " Чайник ", 599);
+        Product product2 = new Product(UUID.randomUUID(), " Фен ", 659);
+        Product product3 = new Product(UUID.randomUUID(), " Блокнот ", 198);
+        Product product4 = new Product(UUID.randomUUID(), " Стол ", 10899);
 
 
         Article article1 = new Article(UUID.randomUUID(), " Кровать ", " Кровать односпальная подростковая ");

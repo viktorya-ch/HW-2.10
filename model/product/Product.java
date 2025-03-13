@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public abstract class Product implements Searchable {
     protected String title;
-private final UUID id;
+    private final UUID id;
 
     public Product(UUID id, String title) {
         if (title == null || title.isBlank()) {
@@ -15,7 +15,8 @@ private final UUID id;
         this.title = title;
         this.id = id;
     }
-    public String getID(){
+
+    public String getID() {
         return this.id;
     }
 
