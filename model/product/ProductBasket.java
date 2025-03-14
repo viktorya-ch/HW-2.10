@@ -13,6 +13,7 @@ public class ProductBasket {
         products = new HashMap<>();
     }
 
+
     public void addProduct(Product product) {
         products.computeIfAbsent(product.getTitle(), k -> new ArrayList<>()).add(product);
     }

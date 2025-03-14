@@ -4,6 +4,7 @@ package model.search;
 
         String getSearchTerm();
 
+
         String getContentType();
 
         String getName();

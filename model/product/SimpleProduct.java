@@ -14,6 +14,7 @@ public class SimpleProduct extends Product {
             throw new ArithmeticException(" Неправильная цена продукта");
         }
         this.price = price;
+
     }
 
     public double getPrice() {

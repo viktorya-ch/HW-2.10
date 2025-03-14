@@ -8,6 +8,7 @@ public abstract class Product implements Searchable {
     protected String title;
     private final UUID id;
 
+
     public Product(UUID id, String title) {
         if (title == null || title.isBlank()) {
             throw new IllegalArgumentException(" Неправильное имя для продукта ");

@@ -15,6 +15,7 @@ public class FixPriceProduct extends Product {
         return 399.0;
     }
 
+
     public boolean equals(Object o) {
         if (this == o) {
             return true;

@@ -45,4 +45,5 @@ public class SearchResult {
         return searchables.stream().filter(searchable -> searchable.getTitle().contains(inquiry)).map(SearchResult::fromSearchable).collect(Collectors.toMap());
 
     }
+
 }

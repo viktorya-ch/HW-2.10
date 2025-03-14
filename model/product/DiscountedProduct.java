@@ -15,6 +15,7 @@ public class DiscountedProduct extends Product {
                 throw new IllegalArgumentException(" Неправильная скидка для продукта ");
             } else {
                 this.discount = discount;
+
             }
         }
     }
