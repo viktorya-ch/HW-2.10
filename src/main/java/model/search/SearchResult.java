@@ -1,3 +1,5 @@
+package model.search;
+
 public class SearchResult {
     public final UUID id;
     public final String title;

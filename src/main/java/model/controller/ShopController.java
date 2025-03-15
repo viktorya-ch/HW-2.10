@@ -1,4 +1,4 @@
-package controller;
+package model.controller;
 
 import service.StorageService;
 import service.SearchService;

@@ -1,6 +1,8 @@
 package model.search;
 
- public interface Searchable {
+import java.util.UUID;
+
+public interface Searchable {
 
         String getSearchTerm();
 
