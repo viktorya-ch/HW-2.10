@@ -5,6 +5,7 @@ import model.search.Searchable;
 import java.util.Objects;
 
 
+
 public class Article implements Searchable {
     private final UUID id;
 

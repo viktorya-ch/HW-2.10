@@ -6,6 +6,7 @@ public class FixPriceProduct extends Product {
     private static final double FIXED_PRICE = 399.0;
     private double price;
 
+
     super(nameProduct, id);
 
     public FixPriceProduct(String title, double price) {

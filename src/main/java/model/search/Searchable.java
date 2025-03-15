@@ -9,6 +9,7 @@ public interface Searchable {
 
 
 
+
         String getContentType();
 
         String getName();

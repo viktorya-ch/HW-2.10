@@ -10,6 +10,7 @@ public class SearchEngine {
     private TreeSet<Searchable> searchables;
 
 
+
     public SearchEngine() {
         searchables = new TreeSet<>(new SearchableComparator());
     }

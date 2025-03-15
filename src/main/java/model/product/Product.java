@@ -3,6 +3,7 @@ package model.product;
 import model.search.Searchable;
 
 
+
 import java.util.Objects;
 
 public abstract class Product implements Searchable {
