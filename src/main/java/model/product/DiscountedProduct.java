@@ -5,6 +5,7 @@ public class DiscountedProduct extends Product {
     public int discount;
     super(nameProduct, id);
 
+
     public DiscountedProduct(String title, double basePrice, int discount) {
         super(title);
         if (basePrice < 0.0) {

@@ -8,6 +8,7 @@ public class SimpleProduct extends Product {
     private final double price;
     super(nameProduct, id);
 
+
     public SimpleProduct(String title, double price) {
         super(title);
         if (price < 0) {

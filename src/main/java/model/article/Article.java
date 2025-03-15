@@ -15,6 +15,7 @@ public class Article implements Searchable {
         this.titleArticle = titleArticle;
         this.textArticle = textArticle;
         this.id = id;
+
     }
 
     public String getID() {
