@@ -10,6 +10,7 @@ public class SimpleProduct extends Product {
 
 
 
+
     public SimpleProduct(String title, double price) {
         super(title);
         if (price < 0) {

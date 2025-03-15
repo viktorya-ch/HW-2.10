@@ -2,6 +2,7 @@ package model.product;
 
 import java.util.Objects;
 
+
 public class FixPriceProduct extends Product {
     private static final double FIXED_PRICE = 399.0;
     private double price;

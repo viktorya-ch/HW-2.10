@@ -3,6 +3,7 @@ package model.product;
 public class DiscountedProduct extends Product {
     public double basePrice;
     public int discount;
+
     super(nameProduct, id);
 
 
