@@ -42,6 +42,7 @@ public class SearchEngine {
             throw new BestResultNotFound(" Объект для запроса " + search + " не найден");
         }
         return objects;
+
     }
 
 }
