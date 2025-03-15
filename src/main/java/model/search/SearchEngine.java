@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 
+
 public class SearchEngine {
     private TreeSet<Searchable> searchables;
 
