@@ -1,4 +1,4 @@
-package model.product;
+package org.skypro.counter.model.product;
 
 import java.util.ArrayList;
 import java.util.HashMap;

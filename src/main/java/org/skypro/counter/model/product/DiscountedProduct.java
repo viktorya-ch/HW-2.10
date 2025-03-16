@@ -1,10 +1,13 @@
-package model.product;
+package org.skypro.counter.model.product;
+
+import java.util.UUID;
 
 public class DiscountedProduct extends Product {
     public double basePrice;
     public int discount;
 
-    super(nameProduct, id);
+    super(UUID id, titleProduct);
+
 
 
 

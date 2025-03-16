@@ -1,15 +1,15 @@
-package model.article;
+package org.skypro.counter.model.article;
 
-import model.search.Searchable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import java.util.Objects;
+import java.util.UUID;
 
 
-
-public class Article implements Searchable {
+public class Article {
 
     private final UUID id;
-
     private final String titleArticle;
     private final String textArticle;
 
@@ -47,10 +47,10 @@ public class Article implements Searchable {
         return " ARTICLE ";
     }
 
-    @Override
-    public String getName() {
-        return titleArticle;
-    }
+//    @Override
+//    public String getName() {
+//        return titleArticle;
+//    }
 
 
     @Override

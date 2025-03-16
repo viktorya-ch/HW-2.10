@@ -1,6 +1,7 @@
-package model.product;
+package org.skypro.counter.model.product;
 
 import java.util.Objects;
+import java.util.UUID;
 
 
 public class FixPriceProduct extends Product {
@@ -8,7 +9,7 @@ public class FixPriceProduct extends Product {
     private double price;
 
 
-    super(nameProduct, id);
+    super(UUID id, titleProduct);
 
     public FixPriceProduct(String title, double price) {
         super(title);

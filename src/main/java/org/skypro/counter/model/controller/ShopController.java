@@ -1,4 +1,4 @@
-package model.controller;
+package org.skypro.counter.model.controller;
 
 import service.StorageService;
 import service.SearchService;

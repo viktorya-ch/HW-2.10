@@ -1,11 +1,12 @@
-package model.product;
+package org.skypro.counter.model.product;
 
-import model.search.Searchable;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+//import org.skypro.counter.model.search.Searchable;
 
 
 
 import java.util.Objects;
+import java.util.UUID;
 
 public abstract class Product implements Searchable {
     protected String title;
@@ -21,7 +22,7 @@ public abstract class Product implements Searchable {
         this.id = id;
     }
 
-    public String getID() {
+    public UUID getID() {
         return this.id;
     }
 
@@ -68,10 +69,10 @@ public abstract class Product implements Searchable {
         return " PRODUCT ";
     }
 
-    @Override
-    public String getName() {
-        return title;
-    }
+//    @Override
+//    public String getName() {
+//        return title;
+//    }
 
 
 }

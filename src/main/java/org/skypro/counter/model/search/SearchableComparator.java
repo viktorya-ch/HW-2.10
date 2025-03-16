@@ -1,4 +1,4 @@
-package model.search;
+package org.skypro.counter.model.search;
 
 import java.util.Comparator;
 
