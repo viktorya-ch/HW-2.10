@@ -1,7 +1,9 @@
-package model.search;
+package org.skypro.counter.model.search;
+
+import java.util.UUID;
 
 public class SearchResult {
-    public final UUID id;
+    public final String id;
     public final String title;
     public final String contentType;
 

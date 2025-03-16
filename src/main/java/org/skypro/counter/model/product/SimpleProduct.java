@@ -1,6 +1,4 @@
-package model.product;
-
-import model.product.Product;
+package org.skypro.counter.model.product;
 
 import java.util.Objects;
 

@@ -1,5 +1,8 @@
-package model.service;
+package org.skypro.counter.model.service;
 
+import org.skypro.counter.model.article.Article;
+import org.skypro.counter.model.product.Product;
+import org.skypro.counter.model.product.Searchable;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -12,27 +15,28 @@ public class StorageService {
 
     private final Map<UUID, Product> products;
     private final Map<UUID, Article> articles;
-    private final Map<UUID, getAllSearchable> getAllSearchables;
+    private final Map<UUID, getAllSearchable> getAllSearchable;
 
 
     public StorageService(Map<UUID, Product> products, Map<UUID, Article> articles) {
         this.products = new HashMap<>;
         this.articles = new HashMap<>;
+        this.getAllSearchable = new HashMap<>;
 
     }
 
-    public Mup<Searchable> getAllSearchables() {
+    public class Mup<Searchable> getAllSearchables() {
         Map<Searchable> searchables = new HashMap<>();
-        searchables.addAll(products);
-        searchables.addAll(articles);
+        searchables.putAll(products);
+        searchables.putAll(articles);
         return searchables;
     }
 
     private void initializeTest() {
-        Product product1 = new Product(UUID.randomUUID(), " Чайник ", 599);
-        Product product2 = new Product(UUID.randomUUID(), " Фен ", 659);
-        Product product3 = new Product(UUID.randomUUID(), " Блокнот ", 198);
-        Product product4 = new Product(UUID.randomUUID(), " Стол ", 10899);
+        Product product1 = new Product(UUID.randomUUID(), " Чайник ")
+        Product product2 = new Product(UUID.randomUUID(), " Фен ");
+        Product product3 = new Product(UUID.randomUUID(), " Блокнот ");
+        Product product4 = new Product(UUID.randomUUID(), " Стол ");
 
 
         Article article1 = new Article(UUID.randomUUID(), " Кровать ", " Кровать односпальная подростковая ");
