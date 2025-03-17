@@ -20,7 +20,7 @@ public class Article {
 
     }
 
-    public String getID() {
+    public UUID getID() {
         return this.id;
     }
 

@@ -1,4 +1,4 @@
-package model.search;
+package org.skypro.counter.model.search;
 
 import java.util.UUID;
 
@@ -14,9 +14,10 @@ public interface Searchable {
             return " " + getName() + " " + getContentType() + " ";
         }
 
+    default Searchable getId(){
+        return UUID(java.util.UUID);
+    }
+
  }
 
 
- public Searchable getId(){
-     return UUID(java.util.UUID);
- }

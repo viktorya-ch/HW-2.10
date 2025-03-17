@@ -2,7 +2,7 @@ package org.skypro.counter.model.service;
 
 import org.skypro.counter.model.article.Article;
 import org.skypro.counter.model.product.Product;
-import org.skypro.counter.model.product.Searchable;
+import org.skypro.counter.model.search.Searchable;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -13,9 +13,9 @@ import java.util.UUID;
 @Service
 public class StorageService {
 
-    private final Map<UUID, Product> products;
-    private final Map<UUID, Article> articles;
-    private final Map<UUID, getAllSearchable> getAllSearchable;
+    private Map<UUID, Product> products;
+    private Map<UUID, Article> articles;
+    private Map<UUID, getAllSearchable> getAllSearchable;
 
 
     public StorageService(Map<UUID, Product> products, Map<UUID, Article> articles) {

@@ -1,14 +1,14 @@
 package org.skypro.counter.model.product;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-//import org.skypro.counter.model.search.Searchable;
+import org.skypro.counter.model.search.Searchable;
 
 
 
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class Product implements Searchable {
+public abstract class Product {
     protected String title;
     private final UUID id;
 
