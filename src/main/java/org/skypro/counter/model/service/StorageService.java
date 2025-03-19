@@ -5,9 +5,11 @@ import org.skypro.counter.model.product.Product;
 import org.skypro.counter.model.search.Searchable;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -15,14 +17,29 @@ public class StorageService {
 
     private Map<UUID, Product> products;
     private Map<UUID, Article> articles;
-    private Map<UUID, getAllSearchable> getAllSearchable;
+    private Map<UUID, Searchable> getAllSearchable;
 
+
+    public Map<UUID, Product> getProducts() {
+        return products;
+    }
+
+    public Map<UUID, Article> getArticles() {
+        return articles;
+    }
+
+    public Map<UUID, Searchable> getGetAllSearchable() {
+        return getAllSearchable;
+    }
 
     public StorageService(Map<UUID, Product> products, Map<UUID, Article> articles) {
         this.products = new HashMap<>;
         this.articles = new HashMap<>;
         this.getAllSearchable = new HashMap<>;
 
+    }
+    public Collection<Searchable>getAllSearchables(){
+        return getAllSearchable.values();
     }
 
     public class Mup<Searchable> getAllSearchables() {

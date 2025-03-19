@@ -1,6 +1,8 @@
 package org.skypro.counter.model.search;
 
+import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class SearchResult {
     public final String id;
