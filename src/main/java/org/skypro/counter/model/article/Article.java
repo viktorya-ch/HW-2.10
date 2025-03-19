@@ -1,13 +1,14 @@
 package org.skypro.counter.model.article;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.skypro.counter.model.search.Searchable;
 
 
 import java.util.Objects;
 import java.util.UUID;
 
 
-public class Article {
+public class Article implements Searchable {
 
     private final UUID id;
     private final String titleArticle;
@@ -45,6 +46,11 @@ public class Article {
     @JsonIgnore
     public String getContentType() {
         return " ARTICLE ";
+    }
+
+    @Override
+    public String getName() {
+        return "";
     }
 
 //    @Override
