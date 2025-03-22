@@ -1,11 +1,14 @@
 package org.skypro.counter.model.search;
 
-import java.util.Map;
+import org.skypro.counter.model.service.StorageService;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class SearchResult {
-    public final String id;
+    public final UUID id;
     public final String title;
     public final String contentType;
 
@@ -20,7 +23,7 @@ public class SearchResult {
         return this.id;
     }
 
-    public void setId() {
+    public UUID setId() {
         return id;
     }
 
@@ -28,7 +31,7 @@ public class SearchResult {
         return this.title;
     }
 
-    public void setTitle() {
+    public String setTitle() {
         return title;
     }
 
@@ -36,9 +39,10 @@ public class SearchResult {
         return this.contentType;
     }
 
-    public void setContentType() {
+    public String setContentType() {
         return contentType;
     }
+
 
     public static fromSearchable(Searchable searchable) {
         return new SearchResult(searchable.getId(),
@@ -46,8 +50,8 @@ public class SearchResult {
                 searchable.getContentType());
     }
 
-    public Map<SearchResult> search(String inquiry) {
-        Map<Searchable> searchables = storageService.getAllSearchables();
+    public List<SearchResult> search(String inquiry) {
+        List<Searchable> searchables = storageService.getAllSearchables();
         return searchables.stream().filter(searchable -> searchable.getTitle().contains(inquiry)).map(SearchResult::fromSearchable).collect(Collectors.toMap());
 
     }
