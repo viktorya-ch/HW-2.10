@@ -18,6 +18,7 @@ public interface Searchable {
         return UUID(java.util.UUID);
     }
 
- }
+    Object getTitle();
+}
 
 
