@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class SearchResult {
+public class  SearchResult {
     public final UUID id;
     public final String title;
     public final String contentType;
@@ -44,16 +44,8 @@ public class SearchResult {
     }
 
 
-    public static fromSearchable(Searchable searchable) {
-        return new SearchResult(searchable.getId(),
-                searchable.getTitle(),
-                searchable.getContentType());
-    }
-
-    public List<SearchResult> search(String inquiry) {
-        List<Searchable> searchables = storageService.getAllSearchables();
-        return searchables.stream().filter(searchable -> searchable.getTitle().contains(inquiry)).map(SearchResult::fromSearchable).collect(Collectors.toMap());
-
+    public static SearchResult fromSearchable(Searchable searchable,String title, String contentType) {
+        return new SearchResult(searchable.getId(),title,contentType);
     }
 
 }

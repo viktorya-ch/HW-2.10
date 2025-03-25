@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public abstract class Product {
     protected String title;
-    private final UUID id;
+    public final UUID id;
 
 
 
@@ -68,11 +68,6 @@ public abstract class Product {
     public String getContentType() {
         return " PRODUCT ";
     }
-
-//    @Override
-//    public String getName() {
-//        return title;
-//    }
 
 
 }

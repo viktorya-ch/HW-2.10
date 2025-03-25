@@ -1,24 +1,25 @@
 package org.skypro.counter.model.search;
 
+
 import java.util.UUID;
 
 public interface Searchable {
+    UUID getId();
 
-        String getSearchTerm();
+    String getSearchTerm();
 
-        String getContentType();
+    String getContentType();
 
-        String getName();
+    String getName();
 
-        default String getStringRepresentation() {
-            return " " + getName() + " " + getContentType() + " ";
-        }
-
-    default Searchable getId(){
-        return UUID(java.util.UUID);
+    default String getStringRepresentation() {
+        return " " + getName() + " " + getContentType() + " ";
     }
 
-    Object getTitle();
+
 }
+
+
+
 
 

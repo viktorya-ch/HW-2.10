@@ -1,16 +1,19 @@
 package org.skypro.counter.model.product;
 
 import java.util.Objects;
+import java.util.UUID;
 
-public class SimpleProduct extends Product {
+public final class SimpleProduct extends Product {
     private final double price;
-    super(nameProduct, id);
+    private String title;
+    private UUID id;
+   // super(nameProduct, id);
 
 
 
 
-    public SimpleProduct(String title, double price) {
-        super(title);
+    private SimpleProduct(double price, String title, UUID id) {
+        super(id, title);
         if (price < 0) {
             throw new ArithmeticException(" Неправильная цена продукта");
         }

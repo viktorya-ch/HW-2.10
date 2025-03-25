@@ -6,14 +6,9 @@ public class DiscountedProduct extends Product {
     public double basePrice;
     public int discount;
 
-    super(UUID id, titleProduct);
-
-
-
-
-
-    public DiscountedProduct(String title, double basePrice, int discount) {
-        super(title);
+ public DiscountedProduct(UUID id, String title, double basePrice, int discount) {
+        super(id, title);
+        this.discount=discount;
         if (basePrice < 0.0) {
             throw new IllegalArgumentException(" Неправильная базовая цена продукта ");
         } else {

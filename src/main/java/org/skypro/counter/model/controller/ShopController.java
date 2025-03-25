@@ -1,7 +1,6 @@
 package org.skypro.counter.model.controller;
 
 
-
 import org.skypro.counter.model.article.Article;
 import org.skypro.counter.model.product.Product;
 import org.skypro.counter.model.search.SearchResult;
@@ -14,8 +13,8 @@ import java.util.Collection;
 import java.util.List;
 
 public class ShopController {
-    private final StorageService storageService;
-    private final SearchService searchServise;
+    private StorageService storageService;
+    private SearchService searchServise;
 
     @GetMapping("/products")
     public Collection<Product> getAllProducts() {

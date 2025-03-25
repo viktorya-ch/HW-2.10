@@ -2,19 +2,21 @@ package org.skypro.counter.model.service;
 
 import org.skypro.counter.model.article.Article;
 import org.skypro.counter.model.product.Product;
+import org.skypro.counter.model.search.SearchResult;
 import org.skypro.counter.model.search.Searchable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @Service
 public class StorageService {
 
-    private Map<UUID, Product> products;
-    private Map<UUID, Article> articles;
-    private Map<UUID, Searchable> getAllSearchable;
+    private final Map<UUID, Product> products;
+    private final Map<UUID, Article> articles;
+    private final Map<UUID, Searchable> getAllSearchable;
 
 
     public Map<UUID, Product> getProducts() {
@@ -30,27 +32,70 @@ public class StorageService {
     }
 
     public StorageService() {
-        this.products = new HashMap<>;
-        this.articles = new HashMap<>;
-        this.getAllSearchable = new HashMap<>;
+        this.products = new HashMap<>();
+        this.articles = new HashMap<>();
+        this.getAllSearchable = new HashMap<>();
 
     }
-    public Collection<Searchable>getAllSearchables(){
-        return getAllSearchable.values();
+
+    public Collection<Article> getAllArticles() {
+        return articles.values();
     }
 
-    public List<Searchable> getAllSearchables() {
-       List<Searchable> searchables = new ArrayList<>();
-        searchables.addAll(products);
-        searchables.addAll(articles);
-        return searchables;
+    public Collection<Product> getAllProducts() {
+        return products.values();
     }
+
+    public Collection<Object> getAllSearchable() {
+        return Stream.concat(products.values().stream(), articles.values().stream()).collect(Collectors.toList());
+    }
+
 
     private void initializeTest() {
-        Product product1 = new Product(UUID.randomUUID(), " Чайник ");
-        Product product2 = new Product(UUID.randomUUID(), " Фен ");
-        Product product3 = new Product(UUID.randomUUID(), " Блокнот ");
-        Product product4 = new Product(UUID.randomUUID(), " Стол ");
+        Product product1 = new Product(UUID.randomUUID(), " Чайник ") {
+            @Override
+            public double getPrice() {
+                return 0;
+            }
+
+            @Override
+            public boolean isSpecial() {
+                return false;
+            }
+        };
+        Product product2 = new Product(UUID.randomUUID(), " Фен ") {
+            @Override
+            public double getPrice() {
+                return 0;
+            }
+
+            @Override
+            public boolean isSpecial() {
+                return false;
+            }
+        };
+        Product product3 = new Product(UUID.randomUUID(), " Блокнот ") {
+            @Override
+            public double getPrice() {
+                return 0;
+            }
+
+            @Override
+            public boolean isSpecial() {
+                return false;
+            }
+        };
+        Product product4 = new Product(UUID.randomUUID(), " Стол ") {
+            @Override
+            public double getPrice() {
+                return 0;
+            }
+
+            @Override
+            public boolean isSpecial() {
+                return false;
+            }
+        };
 
 
         Article article1 = new Article(UUID.randomUUID(), " Кровать ", " Кровать односпальная подростковая ");
@@ -61,4 +106,7 @@ public class StorageService {
     }
 
 
+    public Collection<SearchResult> getAllSearchResults() {
+        return List.of();
+    }
 }
