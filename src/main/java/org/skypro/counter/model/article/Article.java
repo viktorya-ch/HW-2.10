@@ -38,6 +38,11 @@ public class Article implements Searchable {
         return " " + titleArticle + "\n" + textArticle;
     }
 
+    @Override
+    public UUID getId() {
+        return null;
+    }
+
     @JsonIgnore
     public String getSearchTerm() {
         return toString();
@@ -52,11 +57,6 @@ public class Article implements Searchable {
     public String getName() {
         return "";
     }
-
-//    @Override
-//    public String getName() {
-//        return titleArticle;
-//    }
 
 
     @Override

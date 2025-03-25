@@ -23,8 +23,8 @@ public class SearchService {
 
 
     public List<SearchResult> search(String inquery) {
-        Collection<Searchable> searchables = storageService.getAllSearchables();
-        return searchables.stream().filter(searchable -> searchable.getContentType().toLowerCase().contains(inquery.toLowerCase())).map(SearchResult::new).collect(Collectors.toList());
+        Collection<SearchResult> allResults = storageService.getAllSearchResults();
+        return allResults.stream().filter(result -> result.getTitle().toLowerCase().contains(inquery.toLowerCase()) || result.getContentType().toLowerCase().contains(inquery.toLowerCase())).collect(Collectors.toList());
     }
 
 

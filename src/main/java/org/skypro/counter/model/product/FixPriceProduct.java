@@ -4,15 +4,13 @@ import java.util.Objects;
 import java.util.UUID;
 
 
-public class FixPriceProduct extends Product {
+public final class FixPriceProduct extends Product {
     private static final double FIXED_PRICE = 399.0;
-    private double price;
+    private final double price;
 
-
-    super(UUID id, titleProduct);
-
-    public FixPriceProduct(String title, double price) {
-        super(title);
+    public FixPriceProduct(UUID id, String title,double price) {
+        super(id, title);
+        this.price=price;
     }
 
     public double getPrice() {
