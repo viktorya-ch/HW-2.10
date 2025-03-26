@@ -7,12 +7,8 @@ public final class SimpleProduct extends Product {
     private final double price;
     private String title;
     private UUID id;
-   // super(nameProduct, id);
 
-
-
-
-    private SimpleProduct(double price, String title, UUID id) {
+    public SimpleProduct(double price, String title, UUID id) {
         super(id, title);
         if (price < 0) {
             throw new ArithmeticException(" Неправильная цена продукта");
