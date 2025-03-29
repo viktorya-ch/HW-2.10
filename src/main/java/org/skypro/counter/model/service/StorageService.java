@@ -74,5 +74,9 @@ public class StorageService {
 
     }
 
+    public Optional<Product> getProductId(UUID id) {
+        return Optional.ofNullable(getProducts().remove(id));
+    }
+
 
 }
