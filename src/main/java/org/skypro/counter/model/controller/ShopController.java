@@ -53,7 +53,6 @@ public class ShopController {
     @GetMapping("/basket")
     public UserBasket getUserBasket() {
         return basketService.getUserBasket();
-
     }
 
 }

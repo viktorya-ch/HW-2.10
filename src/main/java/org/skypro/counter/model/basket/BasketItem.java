@@ -21,7 +21,5 @@ public class BasketItem {
 
     public double getTotalPrice() {
         return product.getPrice() * quantity;
-
-
     }
 }

@@ -17,7 +17,5 @@ public class UserBasket {
 
     public double getTotal() {
         return total;
-
-
     }
 }
