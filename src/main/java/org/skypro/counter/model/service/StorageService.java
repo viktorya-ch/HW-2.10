@@ -74,7 +74,5 @@ public class StorageService {
 
     }
 
-   public Collection<SearchResult> getAllSearchResults() {
-        return List.of();
-    }
+
 }
