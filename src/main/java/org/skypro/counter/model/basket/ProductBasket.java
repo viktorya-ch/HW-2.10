@@ -13,15 +13,14 @@ public class ProductBasket {
         this.products = new HashMap<>();
     }
 
-    public void addProduct (UUID id) {
+    public void addProduct(UUID id) {
         products.put(id, products.getOrDefault(id, 0) + 1);
     }
-    public Map<UUID, Integer> getProducts(){
+
+    public Map<UUID, Integer> getProducts() {
         return Collections.unmodifiableMap(products);
 
     }
-
-
 
 
 }
