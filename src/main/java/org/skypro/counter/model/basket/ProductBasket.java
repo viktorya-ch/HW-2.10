@@ -1,10 +1,13 @@
 package org.skypro.counter.model.basket;
 
 import org.skypro.counter.model.product.Product;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.*;
 
-
+@SessionScope
+@Component
 public class ProductBasket {
     private final Map<UUID, Integer> products;
 
