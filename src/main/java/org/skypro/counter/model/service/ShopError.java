@@ -17,4 +17,6 @@ public final class ShopError {
     public String getMessage() {
         return message;
     }
+
 }
+

@@ -26,6 +26,7 @@ public class BasketService {
         Optional<Product> productOptional = storageService.getProductId(id);
         if (!productOptional.isPresent()) {
             throw new NoSuchProductException(" Товар не найден ");
+
         }
         productBasket.addProduct(id);
     }
