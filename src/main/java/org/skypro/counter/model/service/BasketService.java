@@ -25,7 +25,7 @@ public class BasketService {
     public void addProductToBasket(UUID id) {
         Optional<Product> productOptional = storageService.getProductId(id);
         if (!productOptional.isPresent()) {
-            throw new IllegalArgumentException(" Товар не найден ");
+            throw new NoSuchProductException(" Товар не найден ");
         }
         productBasket.addProduct(id);
     }
@@ -43,7 +43,7 @@ public class BasketService {
             UUID productId = entry.getKey();
             int quantity = entry.getValue();
             Product product = storageService.getProductId(productId).orElseThrow(() ->
-                    new IllegalArgumentException(" Товар не найден " + productId));
+                    new NoSuchProductException(" Товар не найден " + productId));
             return new BasketItem(product, quantity);
         }).collect(Collectors.toList()));
 
