@@ -20,35 +20,32 @@ public class BasketServiceTest {
     private BasketService basketService;
 
     @BeforeEach
-    void setUp(){
-        productBasket = mock (ProductBasket.class);
-        storageService = mock (StorageService.class);
-        basketService = new BasketService(productBasket,storageService);
+    void setUp() {
+        productBasket = mock(ProductBasket.class);
+        storageService = mock(StorageService.class);
+        basketService = new BasketService(productBasket, storageService);
     }
 
-   @Test
-
-   void testAddExistingProductClassAddProduct() {
+    @Test
+    void testAddExistingProductClassAddProduct() {
         UUID productId = UUID.randomUUID();
         when(storageService.getProductId(productId)).thenReturn(true);
         basketService.addProductToBasket(productId);
         verify(productBasket).getProducts(productId);
-   }
+    }
 
-   @Test
-    void testGetUserBasketReturnsBasketWhisProducts(){
+    @Test
+    void testGetUserBasketReturnsBasketWhisProducts() {
         UUID productId1 = UUID.randomUUID();
         UUID productId2 = UUID.randomUUID();
 
         when(productBasket.isEmpty()).thenReturn(false);
         when(productBasket.getProducts()).thenReturn(Map.of(productId1, 1, productId2, 1));
-        Map<UUID,Integer> products = BasketService.getUserBasket().getProducts();
-        assertEquals(2,products.size());
+        Map<UUID, Integer> products = BasketService.getUserBasket().getProducts();
+        assertEquals(2, products.size());
         assertTrue(products.containsKey(productId1));
         assertTrue(products.containsKey(productId2));
-   }
-
-
+    }
 
 
 }
