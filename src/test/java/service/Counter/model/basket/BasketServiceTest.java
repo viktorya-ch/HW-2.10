@@ -45,6 +45,7 @@ public class BasketServiceTest {
         assertEquals(2, products.size());
         assertTrue(products.containsKey(productId1));
         assertTrue(products.containsKey(productId2));
+
     }
 
 

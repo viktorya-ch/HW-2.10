@@ -60,6 +60,8 @@ public class ServiceTest {
         Collection<SearchResult> results=searchService.search(" Подходит ");
         assertFalse(" Результаты сожержат подходящие объектоы ", results.isEmpty());
 
+
+
     }
 }
 
