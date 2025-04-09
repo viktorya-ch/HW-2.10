@@ -23,8 +23,12 @@ public class ProductBasket {
     public Map<UUID, Integer> getProducts() {
         return Collections.unmodifiableMap(products);
 
-
+    }
+    public boolean isEmpty(){
+        return products.isEmpty();
     }
 
 
+
 }
+

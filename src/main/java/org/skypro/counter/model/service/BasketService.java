@@ -38,7 +38,7 @@ public class BasketService {
         }).toList());
     }
 
-    public UserBasket getUserBasket() {
+    public  UserBasket getUserBasket() {
         return new
                 UserBasket(productBasket.getProducts().entrySet().stream().map(entry -> {
             UUID productId = entry.getKey();

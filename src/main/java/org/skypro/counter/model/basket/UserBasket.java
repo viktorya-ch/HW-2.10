@@ -19,4 +19,8 @@ public class UserBasket {
         return total;
 
     }
+
+    public boolean isEmpty(){
+        return items.isEmpty();
+    }
 }
