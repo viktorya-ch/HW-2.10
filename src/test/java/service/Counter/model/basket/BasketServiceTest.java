@@ -26,6 +26,7 @@ public class BasketServiceTest {
     private UUID existingProductId;
     private UUID noExistingProductId;
 
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
