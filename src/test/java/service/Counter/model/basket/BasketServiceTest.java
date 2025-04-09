@@ -64,27 +64,29 @@ public class BasketServiceTest {
     @Test
     public void
     testAddNoExistentProductThrowsException() {
-        assertThrows(NoSuchProductException.class, () ->{
-            basketService.addProductToBasket(noExistingProductId);});
-        }
+        assertThrows(NoSuchProductException.class, () -> {
+            basketService.addProductToBasket(noExistingProductId);
+        });
+    }
 
-        @Test
+    @Test
     public void
-    testAddExistingProductCallsAddProductOnMock(){
+    testAddExistingProductCallsAddProductOnMock() {
         basketService.addProductToBasket(existingProductId);
-        verify(productBasket,times(1)).addProduct(existingProductId);
-        }
+        verify(productBasket, times(1)).addProduct(existingProductId);
+    }
 
 
-        @Test
+    @Test
     public void
-    testGetUserBasketReturnsEmptyIfBasketIsEmpty(){
+
+    testGetUserBasketReturnsEmptyIfBasketIsEmpty() {
         when(productBasket.getProducts()).thenReturn(new HashMap<>());
         assertTrue(basketService.getUserBasket().isEmpty());
-        }
-
-
     }
+
+
+}
 
 
 

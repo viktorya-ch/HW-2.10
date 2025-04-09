@@ -24,41 +24,40 @@ public class StorageServiceTest {
 
     @BeforeEach
     public void setUp() {
-        storageService=mock(StorageService.class);
-        searchService=new SearchService(storageService);
+        storageService = mock(StorageService.class);
+        searchService = new SearchService(storageService);
     }
 
 
     @Test
-    public void  testServiceWhenNOObjects(){
+    public void testServiceWhenNOObjects() {
         when(storageService.getAllSearchable()).thenReturn(Collections.emptyList());
 
 
-    Collection<SearchResult> results= searchService.search(" Тест ");
+        Collection<SearchResult> results = searchService.search(" Тест ");
 
-    assertTrue(" Результаты не должны быть пустыми ", results.isEmpty());}
-
-
-
-    @Test
-    public  void testServiceWhenNOMatchingObjects(){
-       when(storageService.getAllSearchable()).thenReturn(Collections.singletonList(new SimpleProduct(UUID.randomUUID()," Нет подходящего ",UUID.randomUUID())));
-
-
-   Collection<SearchResult> results=searchService.search(" Тест ");
-        assertTrue(" Результаты не сожержат подходящих объектов ", results.isEmpty());}
-
+        assertTrue(" Результаты не должны быть пустыми ", results.isEmpty());
+    }
 
 
     @Test
-    public  void testServiceWhenMatchingObjects(){
-        UUID id= UUID.randomUUID();
-        Searchable matchingProduct = new SimpleProduct(id," Есть подходящий ", UUID.randomUUID());
+    public void testServiceWhenNOMatchingObjects() {
+        when(storageService.getAllSearchable()).thenReturn(Collections.singletonList(new SimpleProduct(UUID.randomUUID(), " Нет подходящего ", UUID.randomUUID())));
+
+
+        Collection<SearchResult> results = searchService.search(" Тест ");
+        assertTrue(" Результаты не сожержат подходящих объектов ", results.isEmpty());
+    }
+
+
+    @Test
+    public void testServiceWhenMatchingObjects() {
+        UUID id = UUID.randomUUID();
+        Searchable matchingProduct = new SimpleProduct(id, " Есть подходящий ", UUID.randomUUID());
         when(storageService.getAllSearchable()).thenReturn(Collections.singletonList(matchingProduct));
 
-        Collection<SearchResult> results=searchService.search(" Подходит ");
+        Collection<SearchResult> results = searchService.search(" Подходит ");
         assertFalse(" Результаты сожержат подходящие объектоы ", results.isEmpty());
-
 
 
     }
