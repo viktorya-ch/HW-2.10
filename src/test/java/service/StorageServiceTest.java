@@ -10,7 +10,6 @@ import org.skypro.counter.model.service.StorageService;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.UUID;
 
 import static org.mockito.Mockito.mock;
@@ -18,7 +17,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.util.AssertionErrors.assertFalse;
 import static org.springframework.test.util.AssertionErrors.assertTrue;
 
-public class ServiceTest {
+public class StorageServiceTest {
     private StorageService storageService;
     private SearchService searchService;
 
