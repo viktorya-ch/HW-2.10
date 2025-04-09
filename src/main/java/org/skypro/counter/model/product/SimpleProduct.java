@@ -5,8 +5,8 @@ import java.util.UUID;
 
 public final class SimpleProduct extends Product {
     private final double price;
-    //private String title;
-    //private UUID id;
+    private String title;
+    private UUID id;
 
     public SimpleProduct(double price, String title, UUID id) {
         super(id, title);
